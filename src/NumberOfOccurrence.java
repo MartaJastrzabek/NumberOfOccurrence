@@ -22,6 +22,9 @@ public class NumberOfOccurrence {
                 list.add(x);
                 set.add(x);
             }
+            if (set.isEmpty()) {
+                System.out.println("Brak elementów do wyświetlenia");
+            }
         } catch (IOException e) {
             System.out.println(e.getMessage());
         } catch (NumberFormatException e) {
