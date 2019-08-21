@@ -18,15 +18,21 @@ public class NumberOfOccurrence {
                 ){
             String line = "";
             while ((line = br.readLine())!= null){
-                list.add(Integer.valueOf(line));
-                set.add(Integer.valueOf(line));
+                Integer x = Integer.valueOf(line);
+                list.add(x);
+                set.add(x);
             }
         } catch (IOException e){
             System.out.println(e.getMessage());
+        } catch (NumberFormatException e){
+            System.out.println("Program natrafił na nie prawidłowy format w pliku.");
         }
 
-
-        System.out.println(getOccurrenceNumbers(list, set));
+        if(set.isEmpty()){
+            System.out.println("Error!");
+        } else {
+            System.out.println(getOccurrenceNumbers(list, set));
+        }
     }
 
     private static String getOccurrenceNumbers(List<Integer> list, Set<Integer> set) {
